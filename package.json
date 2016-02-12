@@ -1,0 +1,14 @@
+{
+  "name": "around-the-world",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "author": "Mstislav Zhivodkov",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "mkdir -p dist && npm run build",
+    "start": "npm run dev",
+    "build": "browserify src/index.js -s dgl | uglifyjs -mc --screw-ie8 > dist/index.js",
+    "dev": "watchify src/index.js -s dgl -o dist/index.js -dv"
+  }
+}
